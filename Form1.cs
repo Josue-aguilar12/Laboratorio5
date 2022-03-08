@@ -35,7 +35,7 @@ namespace Laboratorio5
 
                 empleados.Add(empleado);
                 //listBox1.Items.Add(empleado.nombredepersona);
-                comboBox1.Items.Add(empleado.numerodepersona + empleado.nombredepersona); 
+                //comboBox1.Items.Add(empleado.nombredepersona); 
             }
             reader.Close(); 
         }
@@ -83,10 +83,19 @@ namespace Laboratorio5
                         sueldos.sueldopormes = empleados[i].sueldoporhora * asistencias[i].horadelmes;
 
                         sueld.Add (sueldos);
-                        listBox1.Items.Add(sueldos.nombredepersona + sueldos.sueldopormes);
+                        listBox1.Items.Add(sueldos.numerodepersona + "\t" + sueldos.nombredepersona);
                     } 
                 }
             } 
+        }
+        void mostrardatos()
+        {
+            //if (listBox1.SelectedItem != null)
+            //{
+            //  MessageBox.Show(listBox1.SelectedItem.ToString()); 
+            //}
+            //empleado  sal = empleados.FindIndex(c => c.numerodepersona == );
+            //MessageBox.Show(sal.nombredepersona); no me queda muy claro como buscar lso datos 
         }
         private void Mostrar_Click(object sender, EventArgs e)
         {
@@ -99,6 +108,11 @@ namespace Laboratorio5
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            mostrardatos(); 
         }
     }
 }
